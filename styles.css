@@ -482,3 +482,108 @@ section:not(.final)::after {
   .time-block span { font-size: 3.3rem; }
   .countdown-timer { gap: 1.4rem; }
 }
+/* Дресс-код — две фотки */
+.dresscode-photos-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease, margin 0.8s ease;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.dresscode-photos-wrapper.active {
+  max-height: 1200px; /* под две фотки, можно увеличить если фотки большие */
+  margin: 2.5rem 0 1rem;
+}
+
+.dresscode-photo-item {
+  text-align: center;
+}
+
+.dresscode-photo {
+  width: 100%;
+  max-width: 500px; /* чтобы не растягивались слишком сильно */
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.65);
+  display: block;
+  margin: 0 auto;
+}
+/* Улучшенная центровка на мобильных */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 5rem 1rem; /* уменьшаем боковые отступы на всех экранах */
+  width: 100%; /* явно на всю ширину */
+}
+
+/* Hero и обложка — центрируем идеально */
+.hero,
+.cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content,
+.cover-content {
+  width: 100%;
+  max-width: 90%; /* не даём вылезать за экран */
+  padding: 0 1rem;
+}
+
+/* На телефонах уменьшаем большие отступы и шрифты */
+@media (max-width: 640px) {
+  .container {
+    padding: 3rem 1rem; /* меньше боковых отступов */
+  }
+
+  .hero,
+  .cover {
+    padding: 0 0.5rem;
+  }
+
+  .cover-names {
+    font-size: 4.5rem; /* меньше, чтобы не вылезало */
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .date-big,
+  .cover-date {
+    font-size: 2rem;
+  }
+
+  section {
+    margin: 5rem 0; /* меньше вертикальных отступов */
+  }
+
+  .photos {
+    gap: 1.5rem; /* меньше расстояния между фото */
+  }
+
+  .countdown-timer {
+    gap: 1.2rem;
+  }
+
+  .time-block span {
+    font-size: 3.2rem;
+  }
+}
+
+/* Дополнительно: заставляем весь контент быть по центру */
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  width: 100%;
+  min-height: 100vh; /* чтобы контент не "падал" */
+}

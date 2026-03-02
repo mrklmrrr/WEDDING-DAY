@@ -54,14 +54,14 @@ setInterval(updateCountdown, 1000);
 // Дресс-код — показать/скрыть фото
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('toggle-dresscode');
-  const photoWrapper = document.getElementById('dresscode-photo');
+  const photosWrapper = document.getElementById('dresscode-photos');
 
-  if (toggleBtn && photoWrapper) {
+  if (toggleBtn && photosWrapper) {
     toggleBtn.addEventListener('click', () => {
-      photoWrapper.classList.toggle('active');
-      toggleBtn.textContent = photoWrapper.classList.contains('active')
-        ? 'Скрыть пример дресс-кода'
-        : 'Посмотреть пример дресс-кода';
+      photosWrapper.classList.toggle('active');
+      toggleBtn.textContent = photosWrapper.classList.contains('active')
+        ? 'Скрыть примеры дресс-кода'
+        : 'Посмотреть примеры дресс-кода';
     });
   }
 });
