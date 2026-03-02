@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Полина & Леонид — Приглашение на свадьбу</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Lora:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Обложка -->
+<div class="cover" id="cover">
+  <img src="images/1.jpg" alt="Полина и Леонид" class="cover-image">
+  <div class="cover-overlay"></div>
+  <div class="cover-content">
+    <h1 class="cover-title">ПРИГЛАШЕНИЕ</h1>
+    <div class="cover-names">Полина & Леонид</div>
+    <div class="cover-date">1 мая 2026</div>
+    <button class="open-btn" id="open-invitation">Открыть приглашение</button>
+  </div>
+</div>
+
+<!-- Основной контент -->
+<div class="main-content" id="main-content">
+
+  <div class="container">
+
+    <div class="couple-avatar">
+      <img src="images/2.jpg" alt="Полина и Леонид">
+    </div>
+
+    <section>
+      <p>Каждый из вас не просто так получил это приглашение,<br>вы важная часть нашей жизни и в этот день мы очень хотим, чтобы вы были рядом.</p>
+    </section>
+
+    <section>
+      <h2>Дорогие гости!</h2>
+      <p>Мы приглашаем вас разделить с нами радость особенного для нас события<br>и стать частью нашей семейной истории!</p>
+    </section>
+
+    <section>
+      <h2>Ждём вас</h2>
+      <p class="address">
+        Брестская область, Каменецкий район,<br>
+        Видомлянский сельсовет, деревня Баранки, 3
+      </p>
+      <img src="images/усадьба.jpg" alt="Место проведения свадьбы" class="place-photo">
+      <a href="https://yandex.ru/maps/?text=Брестская%20область,%20Каменецкий%20район,%20деревня%20Баранки,%203" target="_blank" class="btn">Открыть карту</a>
+    </section>
+
+    <section class="program">
+      <h2>Программа дня</h2>
+      <div class="timeline">
+        <div class="event">
+          <img src="https://img.icons8.com/ios/60/d0d0d0/clock--v1.png" alt="Приезд гостей" class="event-icon">
+          <p><strong>Приезд гостей</strong> — 14:30</p>
+        </div>
+        <div class="event">
+          <img src="https://img.icons8.com/ios/60/d0d0d0/champagne.png" alt="Фуршет" class="event-icon">
+          <p><strong>Фуршет</strong> — 15:00</p>
+        </div>
+        <div class="event">
+          <img src="https://img.icons8.com/ios/60/d0d0d0/wedding-arch.png" alt="Выездная церемония" class="event-icon">
+          <p><strong>Выездная церемония</strong> — 15:30</p>
+        </div>
+        <div class="event">
+          <img src="https://img.icons8.com/ios/60/d0d0d0/moon-symbol.png" alt="Окончание вечера" class="event-icon">
+          <p><strong>Окончание вечера</strong> — 23:00</p>
+        </div>
+      </div>
+    </section>
+<section class="gallery">
+  <h2>Наши моменты</h2>
+  <div class="photos">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+    <img src="images/3.jpg" alt="">
+    <img src="images/4.jpg" alt="">
+  </div>
+</section>
+    <section class="dresscode" id="dresscode-section">
+      <h2>Дресс-код</h2>
+      <p class="highlight">Запрет на яркие оттенки</p>
+      <p>Дорогие гости, просим придерживаться нейтральных и спокойных тонов.<br>Яркие оттенки не приветствуются. Благодарим за понимание!</p>
+      
+      <div class="dresscode-toggle">
+        <button class="toggle-btn" id="toggle-dresscode">Посмотреть пример дресс-кода</button>
+      </div>
+      
+      <div class="dresscode-photo-wrapper" id="dresscode-photo">
+        <img src="images/dresscode.jpg" alt="Пример дресс-кода" class="dresscode-photo">
+      </div>
+    </section>
+
+    <section>
+      <h2>Организатор</h2>
+      <p>По всем вопросам, пожалуйста, обращайтесь к нашему свадебному организатору —<br><strong>Стельмах Елена</strong></p>
+      <a href="https://www.instagram.com/stelmakh_elena_levi" target="_blank" class="btn">Instagram организатора</a>
+    </section>
+
+    <section class="quote">
+      «Как я люблю тебя? Люблю без меры…<br>До глубины души, до всех её высот…»<br><br>— Элизабет Баррэт Браунинг
+    </section>
+
+    <section>
+      <h2>Пожалуйста, не дарите нам цветы. К сожалению, мы не успеем в полной мере насладиться их красотой. </h2>
+      <p>Но очень просим взять с собой хорошее настроение и свои улыбки :)</p>
+    </section>
+
+    <section id="countdown-section">
+      <h2>Осталось до свадьбы</h2>
+      <div id="countdown" class="countdown-timer">
+        <div class="time-block"><span id="days">00</span><span class="label">дней</span></div>
+        <div class="time-block"><span id="hours">00</span><span class="label">часов</span></div>
+        <div class="time-block"><span id="minutes">00</span><span class="label">минут</span></div>
+        <div class="time-block"><span id="seconds">00</span><span class="label">секунд</span></div>
+      </div>
+    </section>
+
+    <!-- Анкета гостя -->
+    <section class="guest-form-section">
+      <h2>Анкета гостя</h2>
+      <p>Пожалуйста, подтвердите свое присутствие до 1 апреля и заполните небольшую форму, чтобы мы могли лучше подготовиться к вашему присутствию</p>
+
+      <form action="https://formspree.io/f/meelbgpw" method="POST">
+        <div class="form-group">
+          <label for="guest-name">ФИО гостя / гостей *</label>
+          <input type="text" id="guest-name" name="ФИО" required placeholder="Иванов Иван Иванович / Иванова Анна Сергеевна">
+        </div>
+
+        <div class="form-group">
+          <label>Предпочтения по напиткам *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="напитки" value="Алкогольные" required> Алкогольные</label>
+            <label><input type="radio" name="напитки" value="Безалкогольные"> Безалкогольные</label>
+            <label><input type="radio" name="напитки" value="Не пью"> Не пью</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Комментарии / пожелания / аллергии (необязательно)</label>
+          <textarea id="comment" name="Комментарии" rows="4" placeholder="Например: аллергия на морепродукты, предпочитаю белое вино..."></textarea>
+        </div>
+
+        <button type="submit" class="btn submit-btn">Отправить анкету</button>
+      </form>
+
+      <p class="form-note">Ответы придут организатору (Елене). Мы ценим ваше время!</p>
+    </section>
+
+    <section class="final">
+      <h2>Спасибо, что будете с нами!</h2>
+      <p class="heart">Полина и Леонид ♡</p>
+    </section>
+
+  </div>
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
