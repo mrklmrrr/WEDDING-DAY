@@ -20,8 +20,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Lora:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="preload" href="images/1.jpg" as="image" />
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Пока грузится CSS — не пустой экран */
+    body { background: #080808; color: #f0ebe3; margin: 0; }
+    .cover-content { position: relative; z-index: 2; }
+  </style>
 </head>
 <body class="cover-locked">
 
@@ -32,11 +36,19 @@
     <p class="cover-eyebrow">1 мая 2026</p>
     <h1 class="cover-title">Приглашение</h1>
     <div class="cover-names">Полина & Леонид</div>
-    <button type="button" class="btn btn-glow open-btn" id="open-invitation" aria-controls="main-content" aria-expanded="false">Открыть</button>
+    <button type="button" class="btn btn-glow open-btn" id="open-invitation" aria-controls="main-content" aria-expanded="false" onclick="window.openInvitation && window.openInvitation()">Открыть</button>
   </div>
 </div>
 
-<div class="main-content" id="main-content" hidden>
+<noscript>
+  <style>
+    .cover { display: none !important; }
+    body.cover-locked { overflow: auto; height: auto; }
+    .main-content { opacity: 1 !important; transform: none !important; }
+  </style>
+</noscript>
+
+<main class="main-content" id="main-content" aria-hidden="true">
   <div class="container">
 
     <div class="couple-avatar">
@@ -181,8 +193,8 @@
     </section>
 
   </div>
-</div>
+</main>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

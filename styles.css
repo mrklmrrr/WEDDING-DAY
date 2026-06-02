@@ -34,6 +34,26 @@ body.cover-locked {
   height: 100vh;
 }
 
+body.cover-locked .main-content {
+  visibility: hidden;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+body.is-open.cover-locked,
+body.is-open {
+  overflow: auto;
+  height: auto;
+}
+
+body.is-open .main-content {
+  visibility: visible;
+  pointer-events: auto;
+  height: auto;
+  overflow: visible;
+}
+
 /* ── Типографика ── */
 .section-eyebrow {
   font-family: 'Playfair Display', serif;
@@ -99,7 +119,14 @@ h2 {
     0 0 0 1px rgba(255, 255, 255, 0.06) inset,
     0 4px 24px rgba(0, 0, 0, 0.45),
     0 0 28px rgba(201, 184, 150, 0.14);
-  backdrop-filter: blur(10px);
+}
+
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .btn-glow,
+  .panel {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
 }
 
 .btn-glow:hover,
@@ -157,19 +184,22 @@ h2 {
 .cover-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     180deg,
     rgba(8, 8, 8, 0.35) 0%,
     var(--overlay) 55%,
     rgba(8, 8, 8, 0.75) 100%
   );
+  pointer-events: none;
 }
 
 .cover-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   padding: 2rem 1.25rem;
   max-width: 92%;
+  pointer-events: auto;
 }
 
 .cover-eyebrow {
@@ -217,10 +247,6 @@ h2 {
   transform: translateY(0);
 }
 
-.main-content[hidden] {
-  display: none;
-}
-
 .container {
   max-width: 640px;
   margin: 0 auto;
@@ -260,7 +286,6 @@ section:not(.final)::after {
   background: var(--bg-elevated);
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(12px);
 }
 
 .panel.compact {
