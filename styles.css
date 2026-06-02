@@ -5,8 +5,11 @@
   --muted: #9a9488;
   --accent: #d8d2c8;
   --light: #f5f0e8;
-  --gold: #c9b896;
-  --gold-dim: rgba(201, 184, 150, 0.35);
+  --silver: #d8d8e2;
+  --silver-bright: #f2f2f8;
+  --silver-dim: rgba(210, 210, 222, 0.38);
+  --silver-glow: rgba(220, 225, 235, 0.22);
+  --silver-glow-strong: rgba(235, 240, 255, 0.38);
   --overlay: rgba(8, 8, 8, 0.52);
   --radius: 20px;
   --radius-pill: 999px;
@@ -61,7 +64,7 @@ body.is-open .main-content {
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--silver);
   margin-bottom: 0.65rem;
 }
 
@@ -114,11 +117,11 @@ h2 {
 .btn-glow {
   color: var(--light);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
-  border-color: var(--gold-dim);
+  border-color: var(--silver-dim);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.06) inset,
     0 4px 24px rgba(0, 0, 0, 0.45),
-    0 0 28px rgba(201, 184, 150, 0.14);
+    0 0 32px var(--silver-glow);
 }
 
 @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
@@ -132,13 +135,13 @@ h2 {
 .btn-glow:hover,
 .btn-glow:focus-visible {
   transform: translateY(-2px);
-  border-color: rgba(201, 184, 150, 0.55);
+  border-color: rgba(220, 225, 235, 0.65);
   color: #fff;
   box-shadow:
-    0 0 0 1px rgba(201, 184, 150, 0.25) inset,
+    0 0 0 1px rgba(240, 242, 250, 0.3) inset,
     0 8px 32px rgba(0, 0, 0, 0.5),
-    0 0 48px rgba(201, 184, 150, 0.28);
-  background: linear-gradient(145deg, rgba(201, 184, 150, 0.14), rgba(255, 255, 255, 0.04));
+    0 0 52px var(--silver-glow-strong);
+  background: linear-gradient(145deg, rgba(220, 225, 235, 0.16), rgba(255, 255, 255, 0.05));
 }
 
 .btn-soft {
@@ -149,7 +152,7 @@ h2 {
 
 .btn-soft:hover,
 .btn-soft:focus-visible {
-  border-color: var(--gold-dim);
+  border-color: var(--silver-dim);
   color: var(--light);
   background: rgba(255, 255, 255, 0.04);
 }
@@ -207,7 +210,7 @@ h2 {
   font-size: 0.75rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--silver);
   margin-bottom: 1rem;
 }
 
@@ -227,7 +230,9 @@ h2 {
   color: var(--light);
   line-height: 1;
   margin-bottom: 2.5rem;
-  text-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  text-shadow:
+    0 0 48px rgba(220, 225, 240, 0.35),
+    0 8px 40px rgba(0, 0, 0, 0.5);
 }
 
 .open-btn {
@@ -272,7 +277,7 @@ section:not(.final)::after {
   width: 48px;
   height: 1px;
   margin: 3.25rem auto 0;
-  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  background: linear-gradient(90deg, transparent, var(--silver-dim), transparent);
 }
 
 .final::after {
@@ -299,10 +304,10 @@ section:not(.final)::after {
   margin: 0 auto 2.5rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--gold-dim);
+  border: 1px solid var(--silver-dim);
   box-shadow:
     0 0 0 4px rgba(8, 8, 8, 0.8),
-    0 0 40px rgba(201, 184, 150, 0.15);
+    0 0 44px var(--silver-glow-strong);
   opacity: 0;
   transform: scale(0.92);
   transition: all 1s ease;
@@ -361,8 +366,8 @@ section:not(.final)::after {
 }
 
 .event-card:hover {
-  border-color: var(--gold-dim);
-  box-shadow: 0 0 24px rgba(201, 184, 150, 0.08);
+  border-color: var(--silver-dim);
+  box-shadow: 0 0 28px var(--silver-glow);
 }
 
 .event-icon-wrap {
@@ -374,8 +379,8 @@ section:not(.final)::after {
   justify-content: center;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(201, 184, 150, 0.2);
-  box-shadow: 0 0 20px rgba(201, 184, 150, 0.08);
+  border: 1px solid rgba(220, 225, 235, 0.28);
+  box-shadow: 0 0 24px var(--silver-glow);
 }
 
 .event-icon {
@@ -395,7 +400,7 @@ section:not(.final)::after {
   font-size: 0.78rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--silver);
 }
 
 .event-name {
@@ -494,7 +499,8 @@ section:not(.final)::after {
   padding: 0.85rem 0.5rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(220, 225, 235, 0.12);
+  box-shadow: 0 0 20px rgba(220, 225, 235, 0.06);
 }
 
 .time-block span:first-child {
@@ -570,8 +576,8 @@ section:not(.final)::after {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--gold-dim);
-  box-shadow: 0 0 0 3px rgba(201, 184, 150, 0.12);
+  border-color: var(--silver-dim);
+  box-shadow: 0 0 0 3px rgba(220, 225, 235, 0.18);
 }
 
 .form-group textarea {
@@ -609,13 +615,13 @@ section:not(.final)::after {
 
 .radio-pill input:checked + span {
   color: var(--light);
-  border-color: var(--gold-dim);
-  background: rgba(201, 184, 150, 0.12);
-  box-shadow: 0 0 20px rgba(201, 184, 150, 0.15);
+  border-color: var(--silver-dim);
+  background: rgba(220, 225, 235, 0.14);
+  box-shadow: 0 0 24px var(--silver-glow);
 }
 
 .radio-pill:hover span {
-  border-color: rgba(201, 184, 150, 0.3);
+  border-color: rgba(220, 225, 235, 0.35);
 }
 
 .submit-btn {
@@ -666,7 +672,7 @@ section:not(.final)::after {
   font-size: 0.72rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--silver);
   margin-bottom: 0.75rem;
 }
 
