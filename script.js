@@ -79,9 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleBtn.addEventListener('click', () => {
       const isOpen = photosWrapper.classList.toggle('active');
       toggleBtn.setAttribute('aria-expanded', String(isOpen));
-      toggleBtn.textContent = isOpen
-        ? 'Скрыть примеры дресс-кода'
-        : 'Посмотреть примеры дресс-кода';
+      toggleBtn.textContent = isOpen ? 'Скрыть' : 'Примеры';
     });
   }
 });
