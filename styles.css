@@ -19,6 +19,13 @@ body {
   line-height: 1.82;
   text-align: center;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body.cover-locked {
+  overflow: hidden;
+  height: 100vh;
 }
 
 /* ── Обложка (первый экран) ── */
@@ -289,12 +296,6 @@ section.visible {
   padding: 3.8rem 2.3rem;
   border-radius: 18px;
   border: 1px solid rgba(208,208,208,0.14);
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.dresscode:hover {
-  background: rgba(40,40,40,0.65);
 }
 
 .dresscode-toggle {
@@ -383,11 +384,21 @@ section.visible {
   text-align: left;
 }
 
-.form-group label {
+.form-group label,
+.form-label-block {
   display: block;
   margin-bottom: 0.7rem;
   font-size: 1.12rem;
   color: var(--light);
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .form-group input[type="text"],
@@ -576,14 +587,58 @@ section:not(.final)::after {
   }
 }
 
-/* Дополнительно: заставляем весь контент быть по центру */
-body {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
 .main-content {
   width: 100%;
-  min-height: 100vh; /* чтобы контент не "падал" */
+  min-height: 100vh;
+}
+
+.main-content[hidden] {
+  display: none;
+}
+
+/* Страница «Спасибо» */
+.thanks-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1.25rem;
+}
+
+.thanks-card {
+  max-width: 520px;
+  padding: 3.5rem 2rem;
+  background: rgba(30, 30, 30, 0.52);
+  border: 1px solid rgba(208, 208, 208, 0.15);
+  border-radius: 20px;
+}
+
+.thanks-eyebrow {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.thanks-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.thanks-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  color: var(--light);
+  margin: 0.5rem 0 1.5rem;
+  line-height: 1.1;
+}
+
+.thanks-text {
+  color: var(--light);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
 }

@@ -4,34 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Полина & Леонид — Приглашение на свадьбу</title>
+  <meta name="description" content="Электронное приглашение на свадьбу Полины и Леонида — 1 мая 2026. Агроэкоусадьба «Три колодца», Брестская область." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Полина & Леонид — Приглашение на свадьбу" />
+  <meta property="og:description" content="1 мая 2026 · Агроэкоусадьба «Три колодца». Откройте приглашение и подтвердите присутствие." />
+  <meta property="og:url" content="https://mrklmrrr.github.io/WEDDING-DAY/" />
+  <meta property="og:image" content="https://mrklmrrr.github.io/WEDDING-DAY/images/1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Lora:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="preload" href="images/1.jpg" as="image" />
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="cover-locked">
 
 <!-- Обложка -->
 <div class="cover" id="cover">
-  <img src="images/1.jpg" alt="Полина и Леонид" class="cover-image">
+  <img src="images/1.jpg" alt="Полина и Леонид" class="cover-image" width="1920" height="1280" fetchpriority="high" decoding="async">
   <div class="cover-overlay"></div>
   <div class="cover-content">
     <h1 class="cover-title">ПРИГЛАШЕНИЕ</h1>
     <div class="cover-names">Полина & Леонид</div>
     <div class="cover-date">1 мая 2026</div>
-    <button class="open-btn" id="open-invitation">Открыть</button>
+    <button type="button" class="open-btn" id="open-invitation" aria-controls="main-content" aria-expanded="false">Открыть</button>
   </div>
 </div>
 
 <!-- Основной контент -->
-<div class="main-content" id="main-content">
+<div class="main-content" id="main-content" hidden>
 
   <div class="container">
 
     <div class="couple-avatar">
-      <img src="images/2.jpg" alt="Полина и Леонид">
+      <img src="images/2.jpg" alt="Полина и Леонид" width="800" height="800" loading="lazy" decoding="async">
     </div>
 
     <section>
@@ -46,63 +58,64 @@
     <section>
       <h2>Ждём вас</h2>
       <p class="address">
-        Агроэкоусадьба "ТРИ КОЛОДЦА"
+        Агроэкоусадьба «ТРИ КОЛОДЦА»
         <br>Брестская область, Каменецкий район,<br>
         Видомлянский сельсовет, деревня Баранки, 3
       </p>
-      <img src="images/усадьба.jpg" alt="Место проведения свадьбы" class="place-photo">
-      <a href="https://yandex.ru/maps/?text=Брестская%20область,%20Каменецкий%20район,%20деревня%20Баранки,%203" target="_blank" class="btn">Открыть карту</a>
+      <img src="images/усадьба.jpg" alt="Место проведения свадьбы — усадьба Три колодца" class="place-photo" loading="lazy" decoding="async">
+      <a href="https://yandex.ru/maps/?text=Брестская%20область,%20Каменецкий%20район,%20деревня%20Баранки,%203" target="_blank" rel="noopener noreferrer" class="btn">Открыть карту</a>
     </section>
 
-  <section class="program">
-  <h2>Программа дня</h2>
-  <div class="timeline">
-    <div class="event">
-      <img src="https://img.icons8.com/ios/50/ffffff/champagne.png" alt="Фуршет" class="event-icon">
-      <p><strong>Фуршет</strong> — 15:00</p>
-    </div>
-    <div class="event">
-      <img src="images/ceremony.png" alt="Выездная церемония" class="event-icon">
-      <p><strong>Выездная церемония</strong> — 15:30</p>
-    </div>
-    <div class="event">
-      <img src="https://img.icons8.com/ios/50/ffffff/moon-symbol.png" alt="Окончание вечера" class="event-icon">
-      <p><strong>Окончание вечера</strong> — 23:00</p>
-    </div>
-  </div>
-</section>
-<section class="gallery">
-  <h2>Наши моменты</h2>
-  <div class="photos">
-    <img src="images/3.jpg" alt="">
-    <img src="images/5.jpg" alt="">
-    <img src="images/6.jpg" alt="">
-    <img src="images/4.jpg" alt="">
-  </div>
-</section>
-   <section class="dresscode" id="dresscode-section">
-  <h2>Дресс-код</h2>
-  <p class="highlight"></p>
-  <p>Дорогие гости, просим придерживаться нейтральных и спокойных тонов.<br>Яркие оттенки не приветствуются)))<br> Благодарим за понимание!</p>
-  
-  <div class="dresscode-toggle">
-    <button class="toggle-btn" id="toggle-dresscode">Посмотреть примеры дресс-кода</button>
-  </div>
-  
-  <div class="dresscode-photos-wrapper" id="dresscode-photos">
-    <div class="dresscode-photo-item">
-      <img src="images/dresscode.jpg" alt="Пример дресс-кода 1" class="dresscode-photo">
-    </div>
-    <div class="dresscode-photo-item">
-      <img src="images/dresscode1.jpg" alt="Пример дресс-кода 2" class="dresscode-photo">
-    </div>
-  </div>
-</section>
+    <section class="program">
+      <h2>Программа дня</h2>
+      <div class="timeline">
+        <div class="event">
+          <img src="images/icon-champagne.svg" alt="" class="event-icon" width="56" height="56">
+          <p><strong>Фуршет</strong> — 15:00</p>
+        </div>
+        <div class="event">
+          <img src="images/ceremony.png" alt="" class="event-icon" width="56" height="56">
+          <p><strong>Выездная церемония</strong> — 15:30</p>
+        </div>
+        <div class="event">
+          <img src="images/icon-moon.svg" alt="" class="event-icon" width="56" height="56">
+          <p><strong>Окончание вечера</strong> — 23:00</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h2>Наши моменты</h2>
+      <div class="photos">
+        <img src="images/3.jpg" alt="Полина и Леонид — момент 1" loading="lazy" decoding="async">
+        <img src="images/5.jpg" alt="Полина и Леонид — момент 2" loading="lazy" decoding="async">
+        <img src="images/6.jpg" alt="Полина и Леонид — момент 3" loading="lazy" decoding="async">
+        <img src="images/4.jpg" alt="Полина и Леонид — момент 4" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section class="dresscode" id="dresscode-section">
+      <h2>Дресс-код</h2>
+      <p>Дорогие гости, просим придерживаться нейтральных и спокойных тонов.<br>Яркие оттенки не приветствуются)))<br> Благодарим за понимание!</p>
+
+      <div class="dresscode-toggle">
+        <button type="button" class="toggle-btn" id="toggle-dresscode" aria-expanded="false" aria-controls="dresscode-photos">Посмотреть примеры дресс-кода</button>
+      </div>
+
+      <div class="dresscode-photos-wrapper" id="dresscode-photos">
+        <div class="dresscode-photo-item">
+          <img src="images/dresscode.jpg" alt="Пример дресс-кода — нейтральные тона" class="dresscode-photo" loading="lazy" decoding="async">
+        </div>
+        <div class="dresscode-photo-item">
+          <img src="images/dresscode1.jpg" alt="Пример дресс-кода — спокойная палитра" class="dresscode-photo" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
 
     <section>
       <h2>Организатор</h2>
       <p>По всем вопросам, пожалуйста, обращайтесь к нашему свадебному организатору —<br><strong>Стельмах Елена</strong></p>
-      <a href="https://www.instagram.com/stelmakh_elena_levi" target="_blank" class="btn">Instagram организатора</a>
+      <a href="https://www.instagram.com/stelmakh_elena_levi" target="_blank" rel="noopener noreferrer" class="btn">Instagram организатора</a>
     </section>
 
     <section class="quote">
@@ -110,13 +123,14 @@
     </section>
 
     <section>
-      <h2>Пожалуйста, не дарите нам цветы. К сожалению, мы не успеем в полной мере насладиться их красотой. </h2>
+      <h2>Пожалуйста, не дарите нам цветы</h2>
+      <p>К сожалению, мы не успеем в полной мере насладиться их красотой.</p>
       <p>Приятным комплиментом для нас будет бутылочка вашего любимого алкогольного напитка, которую мы откроем на ближайшем совместном празднике.</p>
     </section>
 
     <section id="countdown-section">
       <h2>Осталось до свадьбы</h2>
-      <div id="countdown" class="countdown-timer">
+      <div id="countdown" class="countdown-timer" aria-live="polite">
         <div class="time-block"><span id="days">00</span><span class="label">дней</span></div>
         <div class="time-block"><span id="hours">00</span><span class="label">часов</span></div>
         <div class="time-block"><span id="minutes">00</span><span class="label">минут</span></div>
@@ -124,22 +138,25 @@
       </div>
     </section>
 
-    <!-- Анкета гостя -->
     <section class="guest-form-section">
       <h2>Анкета гостя</h2>
-      <p>Пожалуйста, подтвердите свое присутствие до 1 апреля и заполните небольшую форму</p>
+      <p>Пожалуйста, подтвердите своё присутствие до 1 апреля и заполните небольшую форму</p>
 
       <form action="https://formspree.io/f/meelbgpw" method="POST">
+        <input type="hidden" name="_subject" value="Анкета гостя — свадьба Полина и Леонид" />
+        <input type="hidden" name="_next" value="https://mrklmrrr.github.io/WEDDING-DAY/thanks.html" />
+        <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
         <div class="form-group">
           <label for="guest-name">ФИО гостя</label>
-          <input type="text" id="guest-name" name="ФИО" required placeholder="Иванов Иван Иванович / Иванова Анна Сергеевна">
+          <input type="text" id="guest-name" name="ФИО" required placeholder="Иванов Иван Иванович / Иванова Анна Сергеевна" autocomplete="name">
         </div>
 
         <div class="form-group">
-          <label> Трансфер </label>
-          <div class="radio-group">
-            <label><input type="radio" name="трансфер" value="трансфер Высокое" required> Нужен из г.Высокое</label>
-            <label><input type="radio" name="трансфер" value="трансфер Брест" required> Нужен из г.Бреста</label>
+          <span class="form-label-block">Трансфер</span>
+          <div class="radio-group" role="radiogroup" aria-label="Трансфер">
+            <label><input type="radio" name="трансфер" value="трансфер Высокое" required> Нужен из г. Высокое</label>
+            <label><input type="radio" name="трансфер" value="трансфер Брест"> Нужен из г. Бреста</label>
             <label><input type="radio" name="трансфер" value="трансфер не нужен"> Не нужен</label>
           </div>
         </div>
@@ -161,7 +178,6 @@
     </section>
 
   </div>
-
 
 </div>
 

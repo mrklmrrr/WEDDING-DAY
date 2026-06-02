@@ -1,30 +1,49 @@
-// Открытие приглашения
-document.getElementById('open-invitation').addEventListener('click', () => {
-  document.getElementById('cover').classList.add('hidden');
+const cover = document.getElementById('cover');
+const mainContent = document.getElementById('main-content');
+const openBtn = document.getElementById('open-invitation');
+
+function openInvitation() {
+  if (!cover || !mainContent || !openBtn) return;
+
+  openBtn.setAttribute('aria-expanded', 'true');
+  cover.classList.add('hidden');
+  document.body.classList.remove('cover-locked');
+
+  mainContent.removeAttribute('hidden');
+
   setTimeout(() => {
-    document.getElementById('main-content').classList.add('visible');
+    mainContent.classList.add('visible');
+    cover.style.display = 'none';
+    window.scrollTo(0, 0);
   }, 800);
-});
+}
 
-// Плавное появление секций и аватарки
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.18 });
+if (openBtn) {
+  openBtn.addEventListener('click', openInvitation);
+}
 
-document.querySelectorAll('section, .couple-avatar').forEach(el => observer.observe(el));
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  },
+  { threshold: 0.18 }
+);
 
-// Обратный отсчёт
+document.querySelectorAll('section, .couple-avatar').forEach((el) => observer.observe(el));
+
 function updateCountdown() {
   const weddingDate = new Date('2026-05-01T15:00:00');
   const now = new Date();
   let diff = weddingDate - now;
 
+  const ids = ['days', 'hours', 'minutes', 'seconds'];
+
   if (diff <= 0) {
-    ['days','hours','minutes','seconds'].forEach(id => {
+    ids.forEach((id) => {
       const el = document.getElementById(id);
       if (el) el.textContent = '00';
     });
@@ -42,24 +61,25 @@ function updateCountdown() {
 
   const seconds = Math.floor(diff / 1000);
 
-  document.getElementById('days').textContent = String(days).padStart(2, '0');
-  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  const values = { days, hours, minutes, seconds };
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(values[id]).padStart(2, '0');
+  });
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Дресс-код — показать/скрыть фото
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('toggle-dresscode');
   const photosWrapper = document.getElementById('dresscode-photos');
 
   if (toggleBtn && photosWrapper) {
     toggleBtn.addEventListener('click', () => {
-      photosWrapper.classList.toggle('active');
-      toggleBtn.textContent = photosWrapper.classList.contains('active')
+      const isOpen = photosWrapper.classList.toggle('active');
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+      toggleBtn.textContent = isOpen
         ? 'Скрыть примеры дресс-кода'
         : 'Посмотреть примеры дресс-кода';
     });
