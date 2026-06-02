@@ -515,8 +515,8 @@ section:not(.final)::after {
   padding: 0.85rem 0.5rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(220, 225, 235, 0.12);
-  box-shadow: 0 0 20px rgba(220, 225, 235, 0.06);
+  border: 1px solid rgba(150, 170, 200, 0.2);
+  box-shadow: 0 0 20px rgba(140, 165, 210, 0.1);
 }
 
 .time-block span:first-child {
@@ -593,7 +593,7 @@ section:not(.final)::after {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--silver-dim);
-  box-shadow: 0 0 0 3px rgba(220, 225, 235, 0.18);
+  box-shadow: 0 0 0 3px rgba(150, 175, 220, 0.25);
 }
 
 .form-group textarea {
@@ -632,12 +632,12 @@ section:not(.final)::after {
 .radio-pill input:checked + span {
   color: var(--light);
   border-color: var(--silver-dim);
-  background: rgba(220, 225, 235, 0.14);
+  background: rgba(150, 175, 220, 0.18);
   box-shadow: 0 0 24px var(--silver-glow);
 }
 
 .radio-pill:hover span {
-  border-color: rgba(220, 225, 235, 0.35);
+  border-color: rgba(160, 185, 220, 0.45);
 }
 
 .submit-btn {
